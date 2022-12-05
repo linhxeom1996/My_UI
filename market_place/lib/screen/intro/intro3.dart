@@ -13,13 +13,14 @@ class Intro3 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Image.asset("assets/images/intro_bg3.png"),
+        const SizedBox(height: 10),
         Padding(
           padding: const EdgeInsets.only(top: 20, bottom: 50),
           child: Text(
             "Donate, Invest".tr(),
             textAlign: TextAlign.center,
             style: TextStyleBase.montserratStyle(
-                color: ColorBase.mainColor,
+                color: ColorBase.mainGreenColor,
                 size: 16,
                 fontWeight: FontWeight.w600),
           ),

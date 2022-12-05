@@ -13,13 +13,14 @@ class Intro2 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Image.asset("assets/images/intro_bg2.png"),
+        const SizedBox(height: 10),
         Padding(
           padding: const EdgeInsets.only(top: 20, bottom: 50),
           child: Text(
             "Connecting NGOs".tr(),
             textAlign: TextAlign.center,
             style: TextStyleBase.montserratStyle(
-                color: ColorBase.mainColor,
+                color: ColorBase.mainGreenColor,
                 size: 16,
                 fontWeight: FontWeight.w600),
           ),

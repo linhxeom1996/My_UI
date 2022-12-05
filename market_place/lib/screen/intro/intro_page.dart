@@ -38,8 +38,8 @@ class _IntroPageState extends State<IntroPage> {
           children: [
             Container(
               width: double.infinity,
-              height: heightScreen / 2,
-              color: ColorBase.mainColor,
+              height: heightScreen * 2 / 5,
+              color: ColorBase.mainGreenColor,
             ),
             Align(
               alignment: Alignment.bottomCenter,
@@ -47,7 +47,7 @@ class _IntroPageState extends State<IntroPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: Container(
                   width: double.infinity,
-                  height: heightScreen * 4 / 5,
+                  height: heightScreen * 5 / 6,
                   decoration: const BoxDecoration(
                     color: ColorBase.whiteColor,
                     borderRadius: BorderRadius.only(
@@ -58,7 +58,7 @@ class _IntroPageState extends State<IntroPage> {
                     children: <Widget>[
                       Container(
                         width: double.infinity,
-                        height: 500,
+                        height: 450,
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: ScrollConfiguration(
                           behavior: MyBehavior(),
@@ -76,6 +76,7 @@ class _IntroPageState extends State<IntroPage> {
                           ),
                         ),
                       ),
+                      const SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: List<Widget>.generate(
@@ -89,8 +90,9 @@ class _IntroPageState extends State<IntroPage> {
                               width: 11,
                               decoration: BoxDecoration(
                                   color: _indexPage == index
-                                      ? ColorBase.mainColor
-                                      : ColorBase.mainColor.withOpacity(0.5),
+                                      ? ColorBase.mainGreenColor
+                                      : ColorBase.mainGreenColor
+                                          .withOpacity(0.5),
                                   borderRadius: BorderRadius.circular(6)),
                             ),
                           ),
@@ -105,7 +107,7 @@ class _IntroPageState extends State<IntroPage> {
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   shape: const StadiumBorder(),
-                                  backgroundColor: ColorBase.mainColor,
+                                  backgroundColor: ColorBase.mainGreenColor,
                                   disabledBackgroundColor:
                                       const Color(0xff33907C)),
                               onPressed: () {
@@ -114,7 +116,7 @@ class _IntroPageState extends State<IntroPage> {
                                     curve: Curves.easeInOutExpo);
                               },
                               child: Text(
-                                "next".tr(),
+                                _indexPage == 2 ? "finish".tr() : "next".tr(),
                                 style: TextStyleBase.montserratStyle(
                                     color: ColorBase.whiteColor,
                                     size: 16,
