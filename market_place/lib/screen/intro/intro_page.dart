@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:home_clean/screen/extentions/color_extention.dart';
+import 'package:home_clean/screen/extentions/style_text_extention.dart';
 import 'package:home_clean/screen/intro/intro1.dart';
 import 'package:home_clean/screen/intro/intro2.dart';
 import 'package:home_clean/screen/intro/intro3.dart';
@@ -55,9 +56,10 @@ class _IntroPageState extends State<IntroPage> {
                   ),
                   child: Column(
                     children: <Widget>[
-                      SizedBox(
+                      Container(
                         width: double.infinity,
-                        height: 300,
+                        height: 500,
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: ScrollConfiguration(
                           behavior: MyBehavior(),
                           child: PageView.builder(
@@ -109,9 +111,15 @@ class _IntroPageState extends State<IntroPage> {
                               onPressed: () {
                                 _pageController.nextPage(
                                     duration: const Duration(milliseconds: 300),
-                                    curve: Curves.easeInCubic);
+                                    curve: Curves.easeInOutExpo);
                               },
-                              child: Text("next".tr())),
+                              child: Text(
+                                "next".tr(),
+                                style: TextStyleBase.montserratStyle(
+                                    color: ColorBase.whiteColor,
+                                    size: 16,
+                                    fontWeight: FontWeight.w700),
+                              )),
                         ),
                       ),
                     ],
