@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:home_clean/screen/intro/intro_page.dart';
 import 'package:home_clean/screen/login/login_page.dart';
+import 'package:home_clean/screen/send_otp/send_otp_page.dart';
 
 import 'screen/register/register_page.dart';
 
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const RegisterPage(),
+      home: const SendOTPPage(),
     );
   }
 }

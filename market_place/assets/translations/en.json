@@ -19,5 +19,8 @@
     "re password": "Re-enter Password",
     "create": "Create",
     "have an account": "Have an account ? ",
-    "sign in": "Sign in"
+    "sign in": "Sign in",
+    "verify your phone": "Verify your phone number",
+    "we have sent": "We have sent you an SMS with a code to enter number",
+    "or login with": "Or login with Social network"
 }
