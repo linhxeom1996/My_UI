@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:home_clean/screen/intro/intro_page.dart';
 import 'package:home_clean/screen/login/login_page.dart';
 
+import 'screen/register/register_page.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginPage(),
+      home: const RegisterPage(),
     );
   }
 }

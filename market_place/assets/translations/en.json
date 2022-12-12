@@ -6,10 +6,18 @@
     "Donate, Invest": "Donate, Invest & Support\ninfrastructure projects",
     "welcome to": "Welcome to tradly",
     "login to": "Login to your account",
-    "email_mobile":"Email/Mobile Number",
+    "email_mobile": "Email/Mobile Number",
     "password": "Password",
     "login": "Login",
-    "forgot pass":"Forgot your password?",
+    "forgot pass": "Forgot your password?",
     "don't have account": "Don’t have an account? ",
-    "sign up": "Sign up"
+    "sign up": "Sign up",
+    "sign to": "Signup to your account",
+    "first name": "First Name",
+    "last name": "Last Name",
+    "email id": "Email ID/Phone Number",
+    "re password": "Re-enter Password",
+    "create": "Create",
+    "have an account": "Have an account ? ",
+    "sign in": "Sign in"
 }
