@@ -1,3 +1,4 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:home_clean/screen/extentions/style_text_extention.dart';
@@ -107,29 +108,40 @@ class _PhoneNumberState extends State<PhoneNumber> {
           ),
           borderRadius: BorderRadius.circular(30),
         ),
-        prefixIcon: DropdownButton<String>(
-          icon: const Icon(
-            Icons.arrow_drop_down,
-            color: ColorBase.whiteColor,
+        prefixIcon: Padding(
+          padding: const EdgeInsets.only(left: 3),
+          child: DropdownButtonHideUnderline(
+            child: DropdownButton2<String>(
+              icon: const Icon(
+                Icons.arrow_drop_down,
+                color: ColorBase.whiteColor,
+              ),
+              iconSize: 25,
+              value: _dropdownvalue,
+              alignment: Alignment.centerRight,
+              style: TextStyleBase.montserratStyle(
+                  color: ColorBase.whiteColor, size: 14),
+              dropdownMaxHeight: 200,
+              dropdownWidth: 70,
+              dropdownDecoration: const BoxDecoration(
+                color: ColorBase.mainGreenColor,
+              ),
+              buttonSplashColor: Colors.transparent,
+              items: items
+                  .map((String item) => DropdownMenuItem<String>(
+                        value: item,
+                        child: Text(
+                          item,
+                        ),
+                      ))
+                  .toList(),
+              onChanged: (String? value) {
+                setState(() {
+                  _dropdownvalue = value!;
+                });
+              },
+            ),
           ),
-          iconSize: 25,
-          value: _dropdownvalue,
-          underline: Container(),
-          alignment: Alignment.centerRight,
-          style: TextStyleBase.montserratStyle(
-              color: ColorBase.whiteColor, size: 14),
-          dropdownColor: ColorBase.mainGreenColor,
-          items: items
-              .map((String item) => DropdownMenuItem<String>(
-                    value: item,
-                    child: Text(item),
-                  ))
-              .toList(),
-          onChanged: (String? value) {
-            setState(() {
-              _dropdownvalue = value!;
-            });
-          },
         ),
       ),
       style:
