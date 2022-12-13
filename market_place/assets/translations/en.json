@@ -22,5 +22,9 @@
     "sign in": "Sign in",
     "verify your phone": "Verify your phone number",
     "we have sent": "We have sent you an SMS with a code to enter number",
-    "or login with": "Or login with Social network"
+    "or login with": "Or login with Social network",
+    "phone_verification": "Phone Verification",
+    "enter your OTP": "Enter your OTP code here",
+    "didn't you received": "Didn’t you received any code?\nResent new code",
+    "verify": "Verify"
 }

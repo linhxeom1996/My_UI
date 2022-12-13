@@ -3,8 +3,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:home_clean/screen/extentions/style_text_extention.dart';
 import 'package:home_clean/screen/widgets/elevator_button_base.dart';
-import 'package:home_clean/screen/widgets/text_field_base.dart';
-
 import '../extentions/color_extention.dart';
 
 class SendOTPPage extends StatelessWidget {
@@ -150,3 +148,7 @@ class _PhoneNumberState extends State<PhoneNumber> {
     );
   }
 }
+
+
+//note:
+//search country code 

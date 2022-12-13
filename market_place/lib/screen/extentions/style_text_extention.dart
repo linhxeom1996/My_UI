@@ -5,12 +5,14 @@ class TextStyleBase {
       {required Color color,
       required double size,
       FontWeight? fontWeight,
-      double? letterSpacing}) {
+      double? letterSpacing,
+      double? height}) {
     return TextStyle(
         color: color,
         fontSize: size,
         fontWeight: fontWeight,
         letterSpacing: letterSpacing,
-        fontFamily: "Montserrat");
+        fontFamily: "Montserrat",
+        height: height);
   }
 }
