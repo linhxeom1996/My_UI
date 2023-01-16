@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:music/extension/color_extend.dart';
 import 'package:music/extension/font_extend.dart';
 import 'package:music/widgets/behavior.dart';
-
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import '../models/info_album.dart';
 import '../models/info_singer.dart';
 
@@ -16,6 +16,44 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   double horiScreen = 20;
+
+  List<InfoAlbum> listAlbum1 = [
+    InfoAlbum(
+        image: "assets/images/home_img_album_1.png",
+        name: "Out Of My Mine",
+        type: "Dance"),
+    InfoAlbum(
+        image: "assets/images/home_img_album_2.png",
+        name: "Freak In Me",
+        type: "Electronic"),
+    InfoAlbum(
+        image: "assets/images/home_img_album_2.png",
+        name: "Freak In Me",
+        type: "Electronic"),
+    InfoAlbum(
+        image: "assets/images/home_img_album_2.png",
+        name: "Freak In Me",
+        type: "Electronic"),
+  ];
+
+  List<InfoAlbum> listAlbum2 = [
+    InfoAlbum(
+        image: "assets/images/home_img_album_1.png",
+        name: "Out Of My Mine",
+        type: "Dance"),
+    InfoAlbum(
+        image: "assets/images/home_img_album_2.png",
+        name: "Freak In Me",
+        type: "Electronic"),
+    InfoAlbum(
+        image: "assets/images/home_img_album_2.png",
+        name: "Freak In Me",
+        type: "Electronic"),
+    InfoAlbum(
+        image: "assets/images/home_img_album_2.png",
+        name: "Freak In Me",
+        type: "Electronic"),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +121,19 @@ class _HomePageState extends State<HomePage> {
                     fontFamily: FontBase.montserrat),
               ),
             ),
-            _listAlbum(),
+            _listAlbum(listAlbum1),
+            Padding(
+              padding:
+                  EdgeInsets.symmetric(horizontal: horiScreen, vertical: 20),
+              child: Text(
+                "new release".tr(),
+                style: const TextStyle(
+                    color: ColorBase.blackColor,
+                    fontSize: 25,
+                    fontFamily: FontBase.montserrat),
+              ),
+            ),
+            _listAlbum(listAlbum2),
           ],
         ),
       ),
@@ -201,26 +251,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _listAlbum() {
-    List<InfoAlbum> listAlbum = [
-      InfoAlbum(
-          image: "assets/images/home_img_album_1.png",
-          name: "Out Of My Mine",
-          type: "Dance"),
-      InfoAlbum(
-          image: "assets/images/home_img_album_2.png",
-          name: "Freak In Me",
-          type: "Electronic"),
-      InfoAlbum(
-          image: "assets/images/home_img_album_2.png",
-          name: "Freak In Me",
-          type: "Electronic"),
-      InfoAlbum(
-          image: "assets/images/home_img_album_2.png",
-          name: "Freak In Me",
-          type: "Electronic"),
-    ];
-
+  Widget _listAlbum(List<InfoAlbum> listAlbum) {
     return SizedBox(
       width: double.infinity,
       height: 140,
