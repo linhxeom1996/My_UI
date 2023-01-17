@@ -38,7 +38,6 @@ class ButtonBase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log("check color: $colorBorder");
     return Padding(
       padding: EdgeInsets.symmetric(
           horizontal: hozirontal ?? AppDimens.horizontalCommon),
@@ -51,10 +50,10 @@ class ButtonBase extends StatelessWidget {
                   onPressed();
                 },
                 style: OutlinedButton.styleFrom(
-                  side:
-                      BorderSide(color: colorBorder ?? AppColor.bgButtonColor),
+                  side: BorderSide(color: colorBorder ?? AppColor.mainColor),
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(radius ?? 0)),
+                      borderRadius: BorderRadius.circular(
+                          radius ?? AppDimens.buttonRadius)),
                 ),
                 child: Text(
                   text,
@@ -70,8 +69,8 @@ class ButtonBase extends StatelessWidget {
                   onPressed();
                 },
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: backgroundColor ?? AppColor.bgButtonColor,
-                    foregroundColor: backgroundColor ?? AppColor.bgButtonColor,
+                    backgroundColor: backgroundColor ?? AppColor.mainColor,
+                    foregroundColor: backgroundColor ?? AppColor.mainColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(radius ?? 0),
                     )),

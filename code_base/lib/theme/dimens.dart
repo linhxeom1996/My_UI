@@ -27,7 +27,7 @@ class AppDimens {
   static const buttonHeight = 50.0;
   static const buttonBorder = 8.0;
   static const buttonSizeText = 18.0;
-  static const buttonRadius = 40.0;
+  static const buttonRadius = 8.0;
 
   //text field
   static const textFieldRadius = 8.0;

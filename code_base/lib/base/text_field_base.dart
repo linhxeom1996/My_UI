@@ -1,4 +1,9 @@
+import 'dart:developer';
+
+import 'package:code_base/theme/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../theme/dimens.dart';
 
 class TextFieldBase extends StatelessWidget {
   final TextEditingController? controller;
@@ -32,6 +37,7 @@ class TextFieldBase extends StatelessWidget {
   final Color? colorBorder;
   final double? radiusBorder;
   final bool? underBorder;
+  final double? hozirontal;
   const TextFieldBase(
       {this.controller,
       this.obscureText,
@@ -63,62 +69,71 @@ class TextFieldBase extends StatelessWidget {
       this.suffixSize,
       this.colorBorder,
       this.radiusBorder,
-      this.underBorder,
+      this.underBorder = false,
+      this.hozirontal,
       super.key});
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      obscureText: obscureText ?? false,
-      cursorColor: cursorColor,
-      style: textStyle ??
-          TextStyle(
-              color: colorText,
-              fontSize: sizeText,
-              fontWeight: fontWeightText,
-              fontFamily: fontFamilyText),
-      decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: hintStyle ??
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: hozirontal ?? AppDimens.horizontalCommon),
+      child: TextFormField(
+        controller: controller,
+        obscureText: obscureText ?? false,
+        cursorColor: cursorColor,
+        style: textStyle ??
             TextStyle(
-                color: colorHintText,
-                fontSize: sizeHintText,
-                fontFamily: fontFamilyHintText,
-                fontWeight: fontWeightHintText),
-        labelText: labelText,
-        labelStyle: labelStyle ??
-            TextStyle(
-              color: colorlabel,
-              fontSize: sizelabel,
-              fontFamily: fontFamilylabel,
-              fontWeight: fontWeightlabel,
-            ),
-        errorText: errorText,
-        prefixIcon: Icon(prefixIcon, color: prefixColor, size: prefixSize),
-        suffixIcon: GestureDetector(
-          onTap: () => tabSuffixIcon,
-          child: Icon(suffixIcon, color: suffixColor, size: suffixSize),
+                color: colorText,
+                fontSize: sizeText,
+                fontWeight: fontWeightText,
+                fontFamily: fontFamilyText),
+        decoration: InputDecoration(
+          hintText: hintText,
+          hintStyle: hintStyle ??
+              TextStyle(
+                  color: colorHintText,
+                  fontSize: sizeHintText,
+                  fontFamily: fontFamilyHintText,
+                  fontWeight: fontWeightHintText),
+          labelText: labelText,
+          labelStyle: labelStyle ??
+              TextStyle(
+                color: colorlabel,
+                fontSize: sizelabel,
+                fontFamily: fontFamilylabel,
+                fontWeight: fontWeightlabel,
+              ),
+          errorText: errorText,
+          prefixIcon: prefixIcon != null
+              ? Icon(prefixIcon, color: prefixColor, size: prefixSize)
+              : null,
+          suffixIcon: suffixIcon != null
+              ? GestureDetector(
+                  onTap: () {
+                    tabSuffixIcon!();
+                  },
+                  child: Icon(suffixIcon, color: suffixColor, size: suffixSize),
+                )
+              : null,
+          enabledBorder: border(colorBorder, radiusBorder, underBorder),
+          focusedBorder: border(colorBorder, radiusBorder, underBorder),
         ),
-        enabledBorder:
-            border(colorBorder, radiusBorder, underBorder: underBorder),
-        focusedBorder:
-            border(colorBorder, radiusBorder, underBorder: underBorder),
       ),
     );
   }
 
-  InputBorder border(Color? colorBorder, double? radiusBorder,
-      {bool? underBorder = false}) {
-    return underBorder!
+  InputBorder border(
+      Color? colorBorder, double? radiusBorder, bool? underBorder) {
+    return underBorder == true
         ? UnderlineInputBorder(
             borderSide: BorderSide(
-              color: colorBorder ?? const Color(0xFF000000),
+              color: colorBorder ?? AppColor.mainColor,
             ),
           )
         : OutlineInputBorder(
             borderSide: BorderSide(
-              color: colorBorder ?? const Color(0xFF000000),
+              color: colorBorder ?? AppColor.mainColor,
             ),
             borderRadius: BorderRadius.circular(radiusBorder ?? 0),
           );
