@@ -1,9 +1,13 @@
+import 'dart:developer';
+
+import 'package:code_base/theme/colors.dart';
 import 'package:code_base/theme/dimens.dart';
 import 'package:flutter/material.dart';
 
 class ButtonBase extends StatelessWidget {
   final String text;
   final TextStyle? styleText;
+  final Function onPressed;
   final Color? colorText;
   final double? sizeText;
   final FontWeight? fontweightText;
@@ -17,6 +21,7 @@ class ButtonBase extends StatelessWidget {
   final double? widthBorder;
   const ButtonBase(
       {required this.text,
+      required this.onPressed,
       this.styleText,
       this.colorText,
       this.fontFamilyText,
@@ -33,35 +38,53 @@ class ButtonBase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    log("check color: $colorBorder");
+    return Padding(
       padding: EdgeInsets.symmetric(
           horizontal: hozirontal ?? AppDimens.horizontalCommon),
-      width: double.infinity,
-      height: height ?? AppDimens.buttonHeight,
-      child: ElevatedButton(
-        onPressed: () {},
-        style: outlineButton!
-            ? OutlinedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(radius ?? 0),
-                    side: BorderSide(
-                        color: colorBorder ?? const Color(0xFF000000),
-                        width: widthBorder ?? 1)),
-              )
-            : ElevatedButton.styleFrom(
-                backgroundColor: backgroundColor,
-                foregroundColor: backgroundColor,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(radius ?? 0))),
-        child: Text(
-          text,
-          style: styleText ??
-              TextStyle(
-                  color: colorText,
-                  fontSize: sizeText,
-                  fontWeight: fontweightText,
-                  fontFamily: fontFamilyText),
-        ),
+      child: SizedBox(
+        width: double.infinity,
+        height: height ?? AppDimens.buttonHeight,
+        child: outlineButton!
+            ? OutlinedButton(
+                onPressed: () {
+                  onPressed();
+                },
+                style: OutlinedButton.styleFrom(
+                  side:
+                      BorderSide(color: colorBorder ?? AppColor.bgButtonColor),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(radius ?? 0)),
+                ),
+                child: Text(
+                  text,
+                  style: styleText ??
+                      TextStyle(
+                          color: colorText,
+                          fontSize: sizeText,
+                          fontWeight: fontweightText,
+                          fontFamily: fontFamilyText),
+                ))
+            : ElevatedButton(
+                onPressed: () {
+                  onPressed();
+                },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: backgroundColor ?? AppColor.bgButtonColor,
+                    foregroundColor: backgroundColor ?? AppColor.bgButtonColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(radius ?? 0),
+                    )),
+                child: Text(
+                  text,
+                  style: styleText ??
+                      TextStyle(
+                          color: colorText,
+                          fontSize: sizeText,
+                          fontWeight: fontweightText,
+                          fontFamily: fontFamilyText),
+                ),
+              ),
       ),
     );
   }

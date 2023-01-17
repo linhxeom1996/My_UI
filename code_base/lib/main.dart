@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (context) => SettingBloc()),
         ],
         child: const MaterialApp(
+          debugShowCheckedModeBanner: false,
           home: HomePage(),
         ));
   }
