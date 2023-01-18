@@ -1,11 +1,22 @@
 import 'package:code_base/screens/page_home/home_bloc.dart';
 import 'package:code_base/screens/page_home/home_page.dart';
 import 'package:code_base/screens/page_setting/setting_bloc.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  runApp(EasyLocalization(
+    supportedLocales: const [
+      Locale('en', 'US'),
+    ],
+    path: 'assets/translations',
+    fallbackLocale: const Locale('en', 'US'),
+    useOnlyLangCode: true,
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -17,9 +28,12 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (context) => HomeBloc()),
           BlocProvider(create: (context) => SettingBloc()),
         ],
-        child: const MaterialApp(
+        child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: HomePage(),
+          localizationsDelegates: context.localizationDelegates,
+          locale: context.locale,
+          supportedLocales: context.supportedLocales,
+          home: const HomePage(),
         ));
   }
 }
