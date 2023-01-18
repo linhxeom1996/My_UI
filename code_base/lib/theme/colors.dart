@@ -4,7 +4,7 @@ class AppColor {
   static const white = Colors.white;
   static const black = Colors.black;
   static const bgScreen = Colors.black;
-  static const mainColor = Colors.blue;
+  static const mainColor = Colors.green;
   static const bgButtonColor = Colors.red;
 
   static Color parseColor(String color) {

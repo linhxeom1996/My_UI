@@ -1,5 +1,4 @@
 import 'package:code_base/screens/widgets/button_widget.dart';
-import 'package:code_base/screens/widgets/text_field_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,7 +11,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            TextFieldCommon(),
+            ButtonCommon(),
           ],
         ),
       ),
