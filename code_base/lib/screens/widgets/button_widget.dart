@@ -11,7 +11,7 @@ class ButtonCommon extends StatelessWidget {
       text: "Press",
       colorText: Colors.red,
       onPressed: () {
-        AppDialog().showNotifyDialog(context);
+        AppDialog().showToast(msg: "Hello");
       },
     );
   }

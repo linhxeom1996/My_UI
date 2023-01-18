@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class AppDialog {
   Future<void> dialogBase(
@@ -41,5 +42,13 @@ class AppDialog {
           "Hello",
           style: TextStyle(color: Colors.red),
         ));
+  }
+
+  Future<void> showToast({required String msg, bool? topPosition = true}) {
+    return Fluttertoast.showToast(
+      msg: msg,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: topPosition != true ? ToastGravity.BOTTOM : ToastGravity.CENTER,
+    );
   }
 }
