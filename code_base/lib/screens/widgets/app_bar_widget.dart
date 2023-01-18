@@ -11,6 +11,7 @@ class AppBarCommon extends StatelessWidget implements PreferredSizeWidget {
   final Color? bgColor;
   final bool? centerTitle;
   final List<Widget>? actions;
+  final double? elevation;
   const AppBarCommon(
       {this.leading,
       this.title = "",
@@ -21,6 +22,7 @@ class AppBarCommon extends StatelessWidget implements PreferredSizeWidget {
       this.bgColor,
       this.centerTitle = true,
       this.actions,
+      this.elevation = 4,
       super.key});
 
   @override
@@ -30,6 +32,7 @@ class AppBarCommon extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: bgColor ?? AppColor.mainColor,
+      elevation: elevation,
       centerTitle: centerTitle,
       actions: actions,
       leading: leading,
