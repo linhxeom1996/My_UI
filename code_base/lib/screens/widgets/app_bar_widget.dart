@@ -12,6 +12,7 @@ class AppBarCommon extends StatelessWidget implements PreferredSizeWidget {
   final bool? centerTitle;
   final List<Widget>? actions;
   final double? elevation;
+  final double? horizontal;
   const AppBarCommon(
       {this.leading,
       this.title = "",
@@ -23,6 +24,7 @@ class AppBarCommon extends StatelessWidget implements PreferredSizeWidget {
       this.centerTitle = true,
       this.actions,
       this.elevation = 4,
+      this.horizontal,
       super.key});
 
   @override
@@ -30,22 +32,25 @@ class AppBarCommon extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: bgColor ?? AppColor.mainColor,
-      elevation: elevation,
-      centerTitle: centerTitle,
-      actions: actions,
-      leading: leading,
-      title: title != ""
-          ? Text(
-              title!,
-              style: TextStyle(
-                  color: colorTitle,
-                  fontSize: sizeTitle,
-                  fontWeight: fontWeightTitle,
-                  fontFamily: fontTitle),
-            )
-          : const SizedBox(),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: horizontal ?? 0),
+      child: AppBar(
+        backgroundColor: bgColor ?? AppColor.mainColor,
+        elevation: elevation,
+        centerTitle: centerTitle,
+        actions: actions,
+        leading: leading,
+        title: title != ""
+            ? Text(
+                title!,
+                style: TextStyle(
+                    color: colorTitle,
+                    fontSize: sizeTitle,
+                    fontWeight: fontWeightTitle,
+                    fontFamily: fontTitle),
+              )
+            : const SizedBox(),
+      ),
     );
   }
 }

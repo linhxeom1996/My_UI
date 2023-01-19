@@ -1,9 +1,11 @@
 import 'package:code_base/screens/page_home/home_bloc.dart';
 import 'package:code_base/screens/page_home/home_page.dart';
 import 'package:code_base/screens/page_setting/setting_bloc.dart';
+import 'package:code_base/screens/widgets/dialog_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,6 +35,7 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: context.localizationDelegates,
           locale: context.locale,
           supportedLocales: context.supportedLocales,
+          builder: EasyLoading.init(),
           home: const HomePage(),
         ));
   }

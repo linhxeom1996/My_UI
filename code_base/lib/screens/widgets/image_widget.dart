@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lottie/lottie.dart';
 
 class ImageWidget extends StatelessWidget {
   final String asset;
@@ -26,6 +27,8 @@ class ImageWidget extends StatelessWidget {
           width: width,
           fit: fit ?? BoxFit.contain,
           height: height);
+    } else if (asset.contains("json")) {
+      return Lottie.asset(asset, width: width, height: height, fit: fit);
     } else {
       return const Text("Error Image!");
     }

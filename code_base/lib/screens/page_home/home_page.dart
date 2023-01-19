@@ -3,6 +3,8 @@ import 'package:code_base/screens/widgets/button_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/dialog_widget.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -13,13 +15,12 @@ class HomePage extends StatelessWidget {
         title: "discover".tr(),
         colorTitle: Colors.black,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            ButtonCommon(),
-          ],
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const [
+          LoadingWidget(),
+          ButtonCommon(),
+        ],
       ),
     );
   }
