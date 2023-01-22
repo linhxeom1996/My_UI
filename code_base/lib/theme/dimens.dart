@@ -23,7 +23,7 @@ class AppDimens {
 
   static const spacing50 = 50.0;
 
-  //button
+  // button elevate
   static const buttonHeight = 50.0;
   static const buttonBorder = 8.0;
   static const buttonSizeText = 18.0;

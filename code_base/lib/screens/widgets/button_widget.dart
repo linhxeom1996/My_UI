@@ -1,7 +1,4 @@
-import 'dart:developer';
-
 import 'package:code_base/base/button_base.dart';
-import 'package:code_base/screens/widgets/dialog_widget.dart';
 import 'package:flutter/material.dart';
 
 class ButtonCommon extends StatelessWidget {
@@ -13,8 +10,7 @@ class ButtonCommon extends StatelessWidget {
       text: "Press",
       colorText: Colors.red,
       onPressed: () {
-        log("press");
-        AppDialog().showLoadingDialog(typeLoading: 1);
+        Navigator.pushNamed(context, '/setting');
       },
     );
   }

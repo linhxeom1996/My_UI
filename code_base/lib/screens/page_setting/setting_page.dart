@@ -5,6 +5,13 @@ class SettingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Scaffold(
+      body: Center(
+        child: Text(
+          "Page 2",
+          style: TextStyle(color: Colors.black, fontSize: 54),
+        ),
+      ),
+    );
   }
 }
