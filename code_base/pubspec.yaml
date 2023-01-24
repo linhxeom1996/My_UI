@@ -23,6 +23,7 @@ dependencies:
   flutter_easyloading: ^3.0.5
   lottie: ^2.2.0
   fluro: ^2.0.3
+  awesome_notifications: ^0.7.4+1
 
 dev_dependencies:
   flutter_test:

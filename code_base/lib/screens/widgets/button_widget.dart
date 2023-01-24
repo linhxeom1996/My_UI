@@ -1,4 +1,5 @@
 import 'package:code_base/base/button_base.dart';
+import 'package:code_base/screens/services/notification_service.dart';
 import 'package:flutter/material.dart';
 
 class ButtonCommon extends StatelessWidget {
@@ -10,7 +11,7 @@ class ButtonCommon extends StatelessWidget {
       text: "Press",
       colorText: Colors.red,
       onPressed: () {
-        Navigator.pushNamed(context, '/setting');
+        NotificationService().showNotification(1, "alerts", "title", "body");
       },
     );
   }

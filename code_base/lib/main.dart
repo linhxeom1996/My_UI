@@ -7,9 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
+import 'screens/services/notification_service.dart';
+
 void main() async {
   RouterBase.setupRouter();
   WidgetsFlutterBinding.ensureInitialized();
+  NotificationService().initialNotification();
   await EasyLocalization.ensureInitialized();
   runApp(EasyLocalization(
     supportedLocales: const [

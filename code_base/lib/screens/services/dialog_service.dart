@@ -5,7 +5,7 @@ import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'image_widget.dart';
+import '../widgets/image_widget.dart';
 
 class AppDialog {
   Future<void> dialogBase(

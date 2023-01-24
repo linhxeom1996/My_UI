@@ -1,3 +1,4 @@
+import 'package:code_base/screens/services/notification_service.dart';
 import 'package:code_base/screens/widgets/app_bar_widget.dart';
 import 'package:code_base/screens/widgets/button_widget.dart';
 import 'package:code_base/theme/colors.dart';
@@ -5,10 +6,21 @@ import 'package:code_base/theme/dimens.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/dialog_widget.dart';
+import '../services/dialog_service.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    NotificationService().requestPermisionNotification();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
