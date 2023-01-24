@@ -1,5 +1,6 @@
-import 'package:code_base/screens/page_home/home_bloc.dart';
-import 'package:code_base/screens/page_home/home_page.dart';
+import 'package:code_base/home.dart';
+import 'package:code_base/screens/page_search/search_bloc.dart';
+import 'package:code_base/screens/page_search/search_page.dart';
 import 'package:code_base/screens/page_setting/setting_bloc.dart';
 import 'package:code_base/screens/routers/router.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           builder: EasyLoading.init(),
           onGenerateRoute: RouterBase.router.generator,
-          home: const HomePage(),
+          home: const Home(),
         ));
   }
 }

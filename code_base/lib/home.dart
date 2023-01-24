@@ -1,21 +1,28 @@
+import 'package:code_base/screens/page_book/book_page.dart';
+import 'package:code_base/screens/page_search/search_page.dart';
+import 'package:code_base/screens/page_setting/setting_page.dart';
 import 'package:code_base/screens/services/notification_service.dart';
 import 'package:code_base/screens/widgets/app_bar_widget.dart';
-import 'package:code_base/screens/widgets/button_widget.dart';
 import 'package:code_base/theme/colors.dart';
 import 'package:code_base/theme/dimens.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import '../services/dialog_service.dart';
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Home> createState() => _HomeState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeState extends State<Home> {
+  int _currentPage = 0;
+  final List<Widget> _listPage = [
+    const SearchPage(),
+    const BookPage(),
+    const SettingPage(),
+  ];
+
   @override
   void initState() {
     NotificationService().requestPermisionNotification();
@@ -40,13 +47,20 @@ class _HomePageState extends State<HomePage> {
               )),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          LoadingWidget(),
-          ButtonCommon(),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentPage,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.book), label: "Book"),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting"),
         ],
+        onTap: (index) {
+          setState(() {
+            _currentPage = index;
+          });
+        },
       ),
+      body: _listPage[_currentPage],
     );
   }
 }

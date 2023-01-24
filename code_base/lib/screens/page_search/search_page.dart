@@ -1,10 +1,9 @@
+import 'package:code_base/theme/colors.dart';
+import 'package:code_base/theme/dimens.dart';
 import 'package:flutter/material.dart';
 
-import '../../theme/colors.dart';
-import '../../theme/dimens.dart';
-
-class SettingPage extends StatelessWidget {
-  const SettingPage({super.key});
+class SearchPage extends StatelessWidget {
+  const SearchPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +11,7 @@ class SettingPage extends StatelessWidget {
       width: double.infinity,
       height: double.infinity,
       child: Text(
-        "Page 3",
+        "Page 1",
         style: TextStyle(color: AppColor.mainColor, fontSize: AppDimens.size22),
       ),
     );

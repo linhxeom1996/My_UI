@@ -37,4 +37,12 @@ class AppDimens {
   static const icon35 = 35.0;
   static const icon45 = 45.0;
   static const icon40 = 40.0;
+
+  //size text
+  static const size10 = 10.0;
+  static const size13 = 13.0;
+  static const size15 = 15.0;
+  static const size18 = 18.0;
+  static const size20 = 20.0;
+  static const size22 = 22.0;
 }
