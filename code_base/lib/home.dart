@@ -23,6 +23,8 @@ class _HomeState extends State<Home> {
     const SettingPage(),
   ];
 
+  final PageController _pageController = PageController();
+
   @override
   void initState() {
     NotificationService().requestPermisionNotification();
@@ -58,9 +60,18 @@ class _HomeState extends State<Home> {
           setState(() {
             _currentPage = index;
           });
+          _pageController.animateToPage(index,
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeInOut);
         },
       ),
-      body: _listPage[_currentPage],
+      body: PageView.builder(
+        controller: _pageController,
+        itemCount: _listPage.length,
+        itemBuilder: (context, index) {
+          return _listPage[index];
+        },
+      ),
     );
   }
 }
