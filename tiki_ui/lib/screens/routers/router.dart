@@ -1,5 +1,4 @@
 import 'package:code_base/home.dart';
-import 'package:code_base/screens/page_search/search_page.dart';
 import 'package:code_base/screens/page_setting/setting_page.dart';
 import 'package:fluro/fluro.dart';
 
@@ -7,7 +6,7 @@ class RouterBase {
   static FluroRouter router = FluroRouter();
 
   static Handler home =
-      Handler(handlerFunc: (context, parameters) => const Home());
+      Handler(handlerFunc: (context, parameters) => const HomeWidget());
 
   static Handler setting =
       Handler(handlerFunc: (context, parameters) => const SettingPage());

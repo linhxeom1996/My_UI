@@ -1,5 +1,5 @@
-import 'package:code_base/screens/page_search/search_event.dart';
-import 'package:code_base/screens/page_search/search_state.dart';
+import 'package:code_base/screens/page_home/home_event.dart';
+import 'package:code_base/screens/page_home/home_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeBloc extends Bloc<SearchEvent, SearchState> {

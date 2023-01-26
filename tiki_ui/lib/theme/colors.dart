@@ -6,6 +6,7 @@ class AppColor {
   static const black54 = Colors.black54;
   static const mainColor = Colors.green;
   static const bgButtonColor = Colors.red;
+  static const blueAccent = Colors.blueAccent;
 
   static Color parseColor(String color) {
     String hex = color.replaceAll("#", "");
