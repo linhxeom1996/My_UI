@@ -18,9 +18,11 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (asset.contains('png')) {
+    if (asset.contains('png') ||
+        asset.contains('jpg') ||
+        asset.contains('jpeg')) {
       return Image.asset(asset,
-          color: color, height: height, width: width, fit: fit);
+          color: color, height: height, width: width, fit: fit ?? BoxFit.fill);
     } else if (asset.contains('svg')) {
       return SvgPicture.asset(asset,
           color: color,

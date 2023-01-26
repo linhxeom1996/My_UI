@@ -23,6 +23,12 @@ class _HomeState extends State<Home> {
     const SettingPage(),
   ];
 
+  final List<BottomNavigationBarItem> _listBottomBar = const [
+    BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+    BottomNavigationBarItem(icon: Icon(Icons.book), label: "Book"),
+    BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting"),
+  ];
+
   final PageController _pageController = PageController();
 
   @override
@@ -51,11 +57,8 @@ class _HomeState extends State<Home> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentPage,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.book), label: "Book"),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting"),
-        ],
+        type: BottomNavigationBarType.fixed,
+        items: _listBottomBar,
         onTap: (index) {
           setState(() {
             _currentPage = index;

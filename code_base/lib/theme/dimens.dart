@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class AppDimens {
   //common
   static const borderCommon = 8.0;
@@ -45,4 +47,8 @@ class AppDimens {
   static const size18 = 18.0;
   static const size20 = 20.0;
   static const size22 = 22.0;
+
+  Size sizeScreen(BuildContext context) {
+    return MediaQuery.of(context).size;
+  }
 }

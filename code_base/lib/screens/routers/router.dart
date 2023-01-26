@@ -1,4 +1,4 @@
-import 'package:code_base/home.dart';
+import 'package:code_base/bottom_bar.dart';
 import 'package:code_base/screens/page_search/search_page.dart';
 import 'package:code_base/screens/page_setting/setting_page.dart';
 import 'package:fluro/fluro.dart';

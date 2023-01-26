@@ -36,8 +36,12 @@ class TextFieldBase extends StatelessWidget {
   final double? radiusBorder;
   final bool? underBorder;
   final double? hozirontal;
+  final EdgeInsetsGeometry? contentPadding;
+  final bool? isDense;
   const TextFieldBase(
       {this.controller,
+      this.contentPadding,
+      this.isDense = false,
       this.obscureText,
       this.cursorColor,
       this.textStyle,
@@ -88,6 +92,8 @@ class TextFieldBase extends StatelessWidget {
                 fontFamily: fontFamilyText),
         decoration: InputDecoration(
           hintText: hintText,
+          contentPadding: contentPadding,
+          isDense: isDense,
           hintStyle: hintStyle ??
               TextStyle(
                   color: colorHintText,
