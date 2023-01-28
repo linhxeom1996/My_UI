@@ -8,14 +8,14 @@ import 'package:code_base/theme/dimens.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class BottomBar extends StatefulWidget {
+  const BottomBar({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<BottomBar> createState() => _BottomBarState();
 }
 
-class _HomeState extends State<Home> {
+class _BottomBarState extends State<BottomBar> {
   int _currentPage = 0;
   final List<Widget> _listPage = [
     const SearchPage(),
