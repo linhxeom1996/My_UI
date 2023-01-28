@@ -1,18 +1,18 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:code_base/bottom_bar.dart';
 import 'package:code_base/screens/page_search/search_bloc.dart';
-import 'package:code_base/screens/page_search/search_page.dart';
 import 'package:code_base/screens/page_setting/setting_bloc.dart';
+import 'package:code_base/screens/page_splash/splash.dart';
 import 'package:code_base/screens/routers/router.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-
 import 'screens/services/notification_service.dart';
 
 void main() async {
-  RouterBase.setupRouter();
   WidgetsFlutterBinding.ensureInitialized();
+  RouterBase.setupRouter();
   NotificationService().initialNotification();
   await EasyLocalization.ensureInitialized();
   runApp(EasyLocalization(
@@ -42,7 +42,10 @@ class MyApp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           builder: EasyLoading.init(),
           onGenerateRoute: RouterBase.router.generator,
-          home: const Home(),
+          home: AnimatedSplashScreen(
+            splash: const SplashPage(),
+            nextScreen: const Home(),
+          ),
         ));
   }
 }
