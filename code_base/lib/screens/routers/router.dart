@@ -1,6 +1,8 @@
 import 'package:code_base/bottom_bar.dart';
+import 'package:code_base/screens/page_intro/intro.dart';
 import 'package:code_base/screens/page_setting/setting_page.dart';
 import 'package:code_base/screens/page_splash/splash.dart';
+import 'package:code_base/screens/routers/path_router.dart';
 import 'package:fluro/fluro.dart';
 
 class RouterBase {
@@ -8,6 +10,9 @@ class RouterBase {
 
   static Handler splash =
       Handler(handlerFunc: (context, parameters) => const SplashPage());
+
+  static Handler intro =
+      Handler(handlerFunc: (context, parameters) => const IntroPage());
 
   static Handler home =
       Handler(handlerFunc: (context, parameters) => const BottomBar());
@@ -17,15 +22,19 @@ class RouterBase {
 
   static void setupRouter() {
     router.define(
-      '/home',
+      PathScreen.home,
       handler: home,
       transitionType: TransitionType.none,
     );
 
-    router.define('/setting',
+    router.define(PathScreen.setting,
         handler: setting, transitionType: TransitionType.none);
 
-    router.define('/', handler: splash, transitionType: TransitionType.none);
+    router.define(PathScreen.splash,
+        handler: splash, transitionType: TransitionType.none);
+
+    router.define(PathScreen.intro,
+        handler: intro, transitionType: TransitionType.none);
   }
 
   // Navigator.pushNamed(context, '/page2/$text/$update');

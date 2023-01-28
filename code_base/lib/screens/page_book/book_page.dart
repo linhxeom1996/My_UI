@@ -13,7 +13,8 @@ class BookPage extends StatelessWidget {
       width: double.infinity,
       child: Text(
         "Page 2",
-        style: TextStyle(color: AppColor.mainColor, fontSize: AppDimens.size22),
+        style:
+            TextStyle(color: AppColor.mainColor, fontSize: AppDimens.sizeTxt22),
       ),
     );
   }

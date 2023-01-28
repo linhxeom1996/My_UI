@@ -13,7 +13,8 @@ class SettingPage extends StatelessWidget {
       height: double.infinity,
       child: Text(
         "Page 3",
-        style: TextStyle(color: AppColor.mainColor, fontSize: AppDimens.size22),
+        style:
+            TextStyle(color: AppColor.mainColor, fontSize: AppDimens.sizeTxt22),
       ),
     );
   }
