@@ -18,7 +18,7 @@ class RouterBase {
   static Handler login =
       Handler(handlerFunc: (context, parameters) => const LoginPage());
 
-  static Handler home =
+  static Handler bottomBar =
       Handler(handlerFunc: (context, parameters) => const BottomBar());
 
   static Handler register =
@@ -26,8 +26,8 @@ class RouterBase {
 
   static void setupRouter() {
     router.define(
-      PathScreen.home,
-      handler: home,
+      PathScreen.bottomBar,
+      handler: bottomBar,
       transitionType: TransitionType.none,
     );
 

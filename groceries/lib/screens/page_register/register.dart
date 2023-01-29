@@ -1,10 +1,8 @@
 import 'dart:developer';
-
 import 'package:code_base/screens/routers/path_router.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
 import '../../theme/colors.dart';
 import '../../theme/dimens.dart';
 import '../../theme/icons.dart';
@@ -52,7 +50,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       asset: AppImage.login_ic_header, width: 50, height: 50),
                 ),
               ),
-              Text('title_register'.tr(), style: AppTextStyle.titleSemibold),
+              Text('title_register'.tr(), style: AppTextStyle.titleSemibold20),
               Padding(
                 padding: const EdgeInsets.only(
                     top: AppDimens.spacing5, bottom: AppDimens.spacing30),
@@ -81,8 +79,11 @@ class _RegisterPageState extends State<RegisterPage> {
               Padding(
                 padding: const EdgeInsets.only(
                     top: AppDimens.spacing30, bottom: AppDimens.spacing20),
-                child:
-                    ButtonCommon(onPressed: () {}, text: 'title_register'.tr()),
+                child: ButtonCommon(
+                    onPressed: () {
+                      Navigator.pushNamed(context, PathScreen.bottomBar);
+                    },
+                    text: 'title_register'.tr()),
               ),
               Align(
                 alignment: Alignment.center,

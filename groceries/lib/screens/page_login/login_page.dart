@@ -43,7 +43,7 @@ class LoginPage extends StatelessWidget {
                       asset: AppImage.login_ic_header, width: 50, height: 50),
                 ),
               ),
-              Text('title_login'.tr(), style: AppTextStyle.titleSemibold),
+              Text('title_login'.tr(), style: AppTextStyle.titleSemibold20),
               Padding(
                 padding: const EdgeInsets.only(
                     top: AppDimens.spacing5, bottom: AppDimens.spacing30),
@@ -72,7 +72,11 @@ class LoginPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(
                     top: AppDimens.spacing30, bottom: AppDimens.spacing20),
-                child: ButtonCommon(onPressed: () {}, text: 'log_in'.tr()),
+                child: ButtonCommon(
+                    onPressed: () {
+                      Navigator.pushNamed(context, PathScreen.bottomBar);
+                    },
+                    text: 'log_in'.tr()),
               ),
               Align(
                 alignment: Alignment.center,

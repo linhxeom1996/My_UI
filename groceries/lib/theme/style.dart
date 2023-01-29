@@ -6,7 +6,7 @@ class AppTextStyle {
   static const fontSemibold = 'Semibold';
   static const fontGilroy = 'Gilroy';
 
-  static const titleSemibold = TextStyle(
+  static const titleSemibold20 = TextStyle(
       color: AppColor.black,
       fontSize: AppDimens.sizeTxt20,
       fontWeight: FontWeight.w700,

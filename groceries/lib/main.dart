@@ -1,4 +1,3 @@
-import 'package:code_base/screens/page_search/search_bloc.dart';
 import 'package:code_base/screens/page_setting/setting_bloc.dart';
 import 'package:code_base/screens/routers/router.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -29,7 +28,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
-          BlocProvider(create: (context) => HomeBloc()),
           BlocProvider(create: (context) => SettingBloc()),
         ],
         child: MaterialApp(
