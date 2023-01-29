@@ -37,8 +37,7 @@ class ButtonBase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: hozirontal ?? AppDimens.horizontalCommon),
+      padding: EdgeInsets.symmetric(horizontal: hozirontal ?? 0),
       child: SizedBox(
         width: double.infinity,
         height: height ?? AppDimens.buttonHeight,

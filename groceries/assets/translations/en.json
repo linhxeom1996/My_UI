@@ -1,7 +1,14 @@
 {
-    "skip": "Skip",
-    "description_intro": "Quarantine is the perfect time to spend your day learning something new, from anywhere!",
-    "title_intro_1":"Learn anytime and anywhere",
-    "title_intro_2":"Find a course for you",
-    "title_intro_3":"Improve your skills"
+    "title_intro":"Welcome\nto our store",
+    "description_intro": "Ger your groceries in as fast as one hour",
+    "title_login": "Loging",
+    "enter_email": "Enter your emails and password",
+    "email": "Email",
+    "hint_email": "imshuvo97@gmail.com",
+    "password": "Password",
+    "hint_password": "●●●●●●●●",
+    "forgot_password": "Forgot Password?",
+    "log_in":"Log In",
+    "dont_have_account": "Don’t have an account? ",
+    "signup": "Signup"
 }

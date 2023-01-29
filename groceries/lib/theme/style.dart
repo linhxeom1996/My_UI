@@ -1,15 +1,24 @@
 import 'package:code_base/theme/colors.dart';
+import 'package:code_base/theme/dimens.dart';
 import 'package:flutter/material.dart';
 
 class AppTextStyle {
-  static const titlestyleCommon = TextStyle(
-    color: AppColor.black,
-    fontSize: 17,
-    fontWeight: FontWeight.w700,
-  );
+  static const fontSemibold = 'Semibold';
+  static const fontGilroy = 'Gilroy';
 
-  static const textstyle1 = TextStyle(
-    color: Color(0xff78746D),
-    fontSize: 14,
-  );
+  static const titleSemibold = TextStyle(
+      color: AppColor.black,
+      fontSize: AppDimens.sizeTxt20,
+      fontWeight: FontWeight.w700,
+      fontFamily: 'Semibold');
+
+  static const txtStyleSemibold = TextStyle(
+      color: Color(0xff78746D),
+      fontSize: AppDimens.sizeTxt14,
+      fontFamily: 'Semibold');
+
+  static const txtStyleGilroy = TextStyle(
+      color: Color(0xff78746D),
+      fontSize: AppDimens.sizeTxt15,
+      fontFamily: 'Gilroy');
 }

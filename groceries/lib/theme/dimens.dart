@@ -24,11 +24,13 @@ class AppDimens {
   static const spacing40 = 40.0;
 
   static const spacing50 = 50.0;
+  static const spacing80 = 80.0;
+  static const spacing100 = 100.0;
 
   // button elevate
   static const buttonHeight = 50.0;
-  static const buttonBorder = 8.0;
-  static const buttonSizeText = 18.0;
+  static const buttonBorder = 15.0;
+  static const buttonSizeText = 15.0;
   static const buttonRadius = 8.0;
 
   //text field
@@ -41,13 +43,12 @@ class AppDimens {
   static const icon40 = 40.0;
 
   //size text
-  static const sizeTxt10 = 10.0;
   static const sizeTxt13 = 13.0;
+  static const sizeTxt14 = 14.0;
   static const sizeTxt15 = 15.0;
-  static const sizeTxt16 = 16.0;
-  static const sizeTxt18 = 18.0;
+  static const sizeTxt17 = 17.0;
   static const sizeTxt20 = 20.0;
-  static const sizeTxt22 = 22.0;
+  static const sizeTxt40 = 40.0;
 
   Size sizeScreen(BuildContext context) {
     return MediaQuery.of(context).size;

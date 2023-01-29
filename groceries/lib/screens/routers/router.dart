@@ -1,6 +1,6 @@
 import 'package:code_base/bottom_bar.dart';
 import 'package:code_base/screens/page_intro/intro.dart';
-import 'package:code_base/screens/page_setting/setting_page.dart';
+import 'package:code_base/screens/page_login/login_page.dart';
 import 'package:code_base/screens/page_splash/splash.dart';
 import 'package:code_base/screens/routers/path_router.dart';
 import 'package:fluro/fluro.dart';
@@ -14,11 +14,11 @@ class RouterBase {
   static Handler intro =
       Handler(handlerFunc: (context, parameters) => const IntroPage());
 
+  static Handler login =
+      Handler(handlerFunc: (context, parameters) => const LoginPage());
+
   static Handler home =
       Handler(handlerFunc: (context, parameters) => const BottomBar());
-
-  static Handler setting =
-      Handler(handlerFunc: (context, parameters) => const SettingPage());
 
   static void setupRouter() {
     router.define(
@@ -27,8 +27,8 @@ class RouterBase {
       transitionType: TransitionType.none,
     );
 
-    router.define(PathScreen.setting,
-        handler: setting, transitionType: TransitionType.none);
+    router.define(PathScreen.login,
+        handler: login, transitionType: TransitionType.none);
 
     router.define(PathScreen.splash,
         handler: splash, transitionType: TransitionType.none);

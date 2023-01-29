@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/colors.dart';
-import '../../theme/dimens.dart';
 
 class BookPage extends StatelessWidget {
   const BookPage({super.key});
@@ -13,8 +12,7 @@ class BookPage extends StatelessWidget {
       width: double.infinity,
       child: Text(
         "Page 2",
-        style:
-            TextStyle(color: AppColor.mainColor, fontSize: AppDimens.sizeTxt22),
+        style: TextStyle(color: AppColor.mainColor),
       ),
     );
   }
