@@ -1,18 +1,27 @@
+import 'dart:developer';
+
 import 'package:code_base/screens/routers/path_router.dart';
-import 'package:code_base/screens/widgets/behavior.dart';
-import 'package:code_base/screens/widgets/button_widget.dart';
-import 'package:code_base/screens/widgets/image_widget.dart';
-import 'package:code_base/screens/widgets/text_field_widget.dart';
-import 'package:code_base/theme/colors.dart';
-import 'package:code_base/theme/dimens.dart';
-import 'package:code_base/theme/icons.dart';
-import 'package:code_base/theme/style.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+import '../../theme/colors.dart';
+import '../../theme/dimens.dart';
+import '../../theme/icons.dart';
+import '../../theme/style.dart';
+import '../widgets/behavior.dart';
+import '../widgets/button_widget.dart';
+import '../widgets/image_widget.dart';
+import '../widgets/text_field_widget.dart';
 
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
+
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -43,54 +52,55 @@ class LoginPage extends StatelessWidget {
                       asset: AppImage.login_ic_header, width: 50, height: 50),
                 ),
               ),
-              Text('title_login'.tr(), style: AppTextStyle.titleSemibold),
+              Text('title_register'.tr(), style: AppTextStyle.titleSemibold),
               Padding(
                 padding: const EdgeInsets.only(
                     top: AppDimens.spacing5, bottom: AppDimens.spacing30),
-                child: Text('enter_email'.tr(),
+                child: Text('enter_credential'.tr(),
                     style: AppTextStyle.txtStyleSemibold),
               ),
-              TextFieldCommon(label: 'email'.tr(), hintText: 'hint_email'.tr()),
+              TextFieldCommon(
+                  label: 'user_name'.tr(), hintText: 'hint_name'.tr()),
               Padding(
-                padding: const EdgeInsets.only(
-                    top: AppDimens.spacing20, bottom: AppDimens.spacing10),
+                padding:
+                    const EdgeInsets.symmetric(vertical: AppDimens.spacing20),
                 child: TextFieldCommon(
-                  label: 'password'.tr(),
-                  hintText: 'hint_password'.tr(),
-                  suffixIcon: Icons.visibility_off,
+                  label: 'email'.tr(),
+                  hintText: 'hint_email'.tr(),
+                  suffixIcon: Icons.done,
+                  suffixColor: AppColor.mainColor,
                 ),
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Text('forgot_password'.tr(),
-                    style: const TextStyle(
-                        color: Color(0xff78746D),
-                        fontSize: AppDimens.sizeTxt13,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: AppTextStyle.fontSemibold)),
+              TextFieldCommon(
+                label: 'password'.tr(),
+                hintText: 'hint_password'.tr(),
+                suffixIcon: Icons.visibility_off,
               ),
+              const SizedBox(height: AppDimens.spacing20),
+              policy(),
               Padding(
                 padding: const EdgeInsets.only(
                     top: AppDimens.spacing30, bottom: AppDimens.spacing20),
-                child: ButtonCommon(onPressed: () {}, text: 'log_in'.tr()),
+                child:
+                    ButtonCommon(onPressed: () {}, text: 'title_register'.tr()),
               ),
               Align(
                 alignment: Alignment.center,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, PathScreen.register);
+                    Navigator.pushNamed(context, PathScreen.login);
                   },
                   child: RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                          text: 'dont_have_account'.tr(),
+                          text: 'already_have_account'.tr(),
                           style: const TextStyle(
                               color: AppColor.black,
                               fontSize: AppDimens.sizeTxt14,
                               fontWeight: FontWeight.w600,
                               fontFamily: AppTextStyle.fontSemibold)),
                       TextSpan(
-                          text: 'signup'.tr(),
+                          text: 'title_login'.tr(),
                           style: const TextStyle(
                               color: Color(0xff53B175),
                               fontSize: AppDimens.sizeTxt14,
@@ -104,6 +114,36 @@ class LoginPage extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Widget policy() {
+    return RichText(
+      text: TextSpan(children: [
+        TextSpan(
+            text: 'by_continue'.tr(), style: AppTextStyle.txtStyleSemibold),
+        TextSpan(
+            text: 'term_of_service'.tr(),
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                log("tab term of");
+              },
+            style: const TextStyle(
+                color: Color(0xff53B175),
+                fontSize: AppDimens.sizeTxt14,
+                fontFamily: AppTextStyle.fontSemibold)),
+        TextSpan(text: 'and'.tr(), style: AppTextStyle.txtStyleSemibold),
+        TextSpan(
+            text: 'privacy_policy'.tr(),
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                log("tab privacy policy");
+              },
+            style: const TextStyle(
+                color: Color(0xff53B175),
+                fontSize: AppDimens.sizeTxt14,
+                fontFamily: AppTextStyle.fontSemibold)),
+      ]),
     );
   }
 }

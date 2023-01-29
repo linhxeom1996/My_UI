@@ -7,3 +7,9 @@ class MyBehavior extends ScrollBehavior {
     return child;
   }
 }
+
+class AppWillPopScope {
+  Future<bool> willPopScope() async {
+    return false;
+  }
+}

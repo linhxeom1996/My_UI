@@ -9,12 +9,14 @@ class TextFieldCommon extends StatelessWidget {
   final String hintText;
   final bool? obscureText;
   final IconData? suffixIcon;
+  final Color? suffixColor;
   const TextFieldCommon(
       {super.key,
       required this.label,
       required this.hintText,
       this.obscureText = false,
-      this.suffixIcon});
+      this.suffixIcon,
+      this.suffixColor});
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +37,7 @@ class TextFieldCommon extends StatelessWidget {
           hintStyle: AppTextStyle.txtStyleGilroy,
           colorBorder: const Color(0xffE2E2E2),
           suffixIcon: suffixIcon,
+          suffixColor: suffixColor,
           hozirontal: 0,
         ),
       ],
