@@ -1,3 +1,4 @@
+import 'package:code_base/screens/check_out/check_out_page.dart';
 import 'package:code_base/screens/widgets/behavior.dart';
 import 'package:code_base/theme/colors.dart';
 import 'package:code_base/theme/dimens.dart';
@@ -42,8 +43,18 @@ class CartPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(
                   horizontal: AppDimens.horizontalCommon, vertical: 20),
-              child:
-                  ButtonCommon(text: "go_to_checkout".tr(), onPressed: () {}),
+              child: ButtonCommon(
+                  text: "go_to_checkout".tr(),
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        backgroundColor: Colors.transparent,
+                        builder: (context) {
+                          return const CheckOutPage(
+                            totalPrice: 5.9,
+                          );
+                        });
+                  }),
             )
           ],
         ),

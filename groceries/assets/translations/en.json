@@ -34,5 +34,14 @@
     "promo_card":"Promo Card",
     "notification":"Notification",
     "help":"Help",
-    "about":"About"
+    "about":"About",
+    "checkout": "Checkout",
+    "delivery": "Delivery",
+    "payment": "Payment",
+    "promo_code": "Promo Code",
+    "total_cost": "Total Cost",
+    "select_method": "Select Method",
+    "pick_discount":"Pick discount",
+    "by_placing_an_order": "By placing an order you agree to our ",
+    "place_order": "Place Order"
 }

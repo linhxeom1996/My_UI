@@ -38,6 +38,9 @@ class AppImage {
   static const account_ic_edit = "${path}account_ic_edit.png";
   static const account_ic_logout = "${path}account_ic_logout.png";
 
+  //check out
+  static const check_out_ic_card = "${path}check_out_ic_card.png";
+
   //other
   static const img_bell = "${path}img_bell.png";
 

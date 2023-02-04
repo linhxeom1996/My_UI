@@ -26,8 +26,6 @@ class _BottomBarState extends State<BottomBar> {
     AccountPage()
   ];
 
-  final PageController _pageController = PageController();
-
   @override
   void initState() {
     NotificationService().requestPermisionNotification();
@@ -42,13 +40,10 @@ class _BottomBarState extends State<BottomBar> {
       },
       child: Scaffold(
         bottomNavigationBar: _bottomNavigatorBar(),
-        body: PageView.builder(
-          controller: _pageController,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: _listPage.length,
-          itemBuilder: (context, index) {
-            return _listPage[index];
-          },
+        body: AnimatedContainer(
+          duration: const Duration(seconds: 2),
+          curve: Curves.easeInCubic,
+          child: _listPage[_currentPage],
         ),
       ),
     );
@@ -97,9 +92,6 @@ class _BottomBarState extends State<BottomBar> {
         setState(() {
           _currentPage = index;
         });
-        _pageController.animateToPage(index,
-            duration: const Duration(milliseconds: 500),
-            curve: Curves.easeInOut);
       },
     );
   }
