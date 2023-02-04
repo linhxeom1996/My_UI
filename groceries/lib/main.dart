@@ -1,4 +1,4 @@
-import 'package:code_base/screens/page_setting/setting_bloc.dart';
+import 'package:code_base/screens/page_home/home_bloc.dart';
 import 'package:code_base/screens/routers/router.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
-          BlocProvider(create: (context) => SettingBloc()),
+          BlocProvider(create: (context) => HomeBloc()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

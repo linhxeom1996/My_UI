@@ -7,6 +7,7 @@ class AppDimens {
   static const verticalCommon = 20.0;
 
   //spacer
+  static const spacing2 = 2.0;
   static const spacing3 = 3.0;
 
   static const spacing5 = 5.0;
@@ -43,6 +44,7 @@ class AppDimens {
   static const icon40 = 40.0;
 
   //size text
+  static const sizeTxt11 = 11.0;
   static const sizeTxt13 = 13.0;
   static const sizeTxt14 = 14.0;
   static const sizeTxt15 = 15.0;
