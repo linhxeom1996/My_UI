@@ -1,6 +1,7 @@
 import 'package:code_base/base/button_base.dart';
 import 'package:code_base/screens/widgets/behavior.dart';
 import 'package:code_base/screens/widgets/button_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/colors.dart';
@@ -20,7 +21,7 @@ class FavoritePage extends StatelessWidget {
         height: double.infinity,
         child: Column(
           children: <Widget>[
-            const AppBarCommon(title: "Favorite"),
+            AppBarCommon(title: "favorite".tr()),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
@@ -41,7 +42,7 @@ class FavoritePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(
                   horizontal: AppDimens.horizontalCommon, vertical: 20),
-              child: ButtonCommon(text: "Add To Cart", onPressed: () {}),
+              child: ButtonCommon(text: "add_to_cart".tr(), onPressed: () {}),
             )
           ],
         ),

@@ -22,5 +22,17 @@
     "already_have_account": "Already have an account? ",
     "location":"Dhaka, Banassre",
     "search_store": "Search Store",
-    "logout": "Log Out"
+    "logout": "Log Out",
+    "go_to_checkout": "Go to Checkout",
+    "add_to_cart":"Add To Cart",
+    "favorite":"Favorite",
+    "my_cart":"My Cart",
+    "other": "Other",
+    "my_detail":"My Details",
+    "delivery_address":"Delivery Address",
+    "payment_method":"Payment Methods",
+    "promo_card":"Promo Card",
+    "notification":"Notification",
+    "help":"Help",
+    "about":"About"
 }

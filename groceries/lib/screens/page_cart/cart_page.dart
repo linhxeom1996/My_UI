@@ -3,6 +3,7 @@ import 'package:code_base/theme/colors.dart';
 import 'package:code_base/theme/dimens.dart';
 import 'package:code_base/theme/icons.dart';
 import 'package:code_base/theme/style.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/app_bar_widget.dart';
@@ -19,7 +20,7 @@ class CartPage extends StatelessWidget {
         height: double.infinity,
         child: Column(
           children: <Widget>[
-            const AppBarCommon(title: "My Cart"),
+            AppBarCommon(title: "my_cart".tr()),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
@@ -41,7 +42,8 @@ class CartPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(
                   horizontal: AppDimens.horizontalCommon, vertical: 20),
-              child: ButtonCommon(text: "Go to Checkout", onPressed: () {}),
+              child:
+                  ButtonCommon(text: "go_to_checkout".tr(), onPressed: () {}),
             )
           ],
         ),

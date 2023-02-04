@@ -1,4 +1,3 @@
-import 'package:code_base/base/button_base.dart';
 import 'package:code_base/models/setting_model.dart';
 import 'package:code_base/screens/widgets/behavior.dart';
 import 'package:code_base/theme/icons.dart';
@@ -12,20 +11,22 @@ class AccountPage extends StatelessWidget {
   AccountPage({super.key});
 
   final List<SettingModel> _listSetting = [
-    SettingModel(icon: AppImage.account_ic_orders, title: "Other"),
+    SettingModel(icon: AppImage.account_ic_orders, title: "other".tr()),
     SettingModel(
         icon: AppImage.account_ic_details,
-        title: "My Details",
+        title: "my_detail".tr(),
         paddingDivider: true),
     SettingModel(
         icon: AppImage.account_ic_delivery,
-        title: "Delivery Address",
+        title: "delivery_address".tr(),
         paddingDivider: true),
-    SettingModel(icon: AppImage.account_ic_payment, title: "Payment Methods"),
-    SettingModel(icon: AppImage.account_ic_promo, title: "Promo Card"),
-    SettingModel(icon: AppImage.account_ic_notification, title: "Notification"),
-    SettingModel(icon: AppImage.account_ic_help, title: "Help"),
-    SettingModel(icon: AppImage.account_ic_about, title: "About"),
+    SettingModel(
+        icon: AppImage.account_ic_payment, title: "payment_method".tr()),
+    SettingModel(icon: AppImage.account_ic_promo, title: "promo_card".tr()),
+    SettingModel(
+        icon: AppImage.account_ic_notification, title: "notification".tr()),
+    SettingModel(icon: AppImage.account_ic_help, title: "help".tr()),
+    SettingModel(icon: AppImage.account_ic_about, title: "about".tr()),
   ];
 
   @override
@@ -60,25 +61,35 @@ class AccountPage extends StatelessWidget {
               Container(
                 height: 50,
                 width: double.infinity,
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                     horizontal: AppDimens.horizontalCommon),
                 child: ElevatedButton(
                     onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xffF2F3F2),
+                        elevation: 0.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(AppDimens.buttonBorder),
+                        )),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Image.asset(AppImage.account_ic_logout,
-                            width: 25, height: 25, color: AppColor.mainColor),
+                            width: 20, height: 20, color: AppColor.mainColor),
                         Text(
                           'logout'.tr(),
                           style: const TextStyle(
                               fontSize: AppDimens.sizeTxt15,
                               fontWeight: FontWeight.w600,
-                              fontFamily: AppTextStyle.fontSemibold),
+                              fontFamily: AppTextStyle.fontSemibold,
+                              color: AppColor.mainColor),
                         ),
-                        const SizedBox(height: 25),
+                        const SizedBox(width: 20),
                       ],
                     )),
-              )
+              ),
+              const SizedBox(height: AppDimens.spacing30)
             ],
           )),
     );
