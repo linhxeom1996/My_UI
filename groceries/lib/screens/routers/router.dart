@@ -1,4 +1,4 @@
-import 'package:code_base/bottom_bar.dart';
+import 'package:code_base/screens/bottom_bar/bottom_bar.dart';
 import 'package:code_base/screens/page_intro/intro.dart';
 import 'package:code_base/screens/page_login/login_page.dart';
 import 'package:code_base/screens/page_register/register.dart';

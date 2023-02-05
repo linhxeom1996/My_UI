@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:code_base/screens/bottom_bar/bottom_bar_bloc.dart';
+import 'package:code_base/screens/bottom_bar/bottom_bar_event.dart';
+import 'package:code_base/screens/bottom_bar/bottom_bar_state.dart';
 import 'package:code_base/screens/page_home/home_bloc.dart';
 import 'package:code_base/screens/widgets/behavior.dart';
 import 'package:code_base/screens/widgets/image_widget.dart';
@@ -10,6 +13,7 @@ import 'package:code_base/theme/icons.dart';
 import 'package:code_base/theme/style.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../models/product_model.dart';
 
@@ -74,6 +78,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: AppDimens.spacing10)
           ],
         ),
       ),
@@ -81,30 +86,38 @@ class HomePage extends StatelessWidget {
   }
 
   Widget searchButton() {
-    return Container(
-      width: double.infinity,
-      height: 50,
-      decoration: BoxDecoration(
-          color: const Color(0xffF2F3F2),
-          borderRadius: BorderRadius.circular(10)),
-      child: Row(
-        children: <Widget>[
-          const Padding(
-            padding: EdgeInsets.only(
-                left: AppDimens.spacing15, right: AppDimens.spacing10),
-            child: ImageWidget(
-                asset: AppImage.home_ic_search, width: 17, height: 17),
+    return BlocBuilder<BottomBarBloc, BottomBarState>(
+        builder: (context, state) {
+      return GestureDetector(
+        onTap: () {
+          context.read<BottomBarBloc>().add(BottomBarEvent(indexPage: 1));
+        },
+        child: Container(
+          width: double.infinity,
+          height: 50,
+          decoration: BoxDecoration(
+              color: const Color(0xffF2F3F2),
+              borderRadius: BorderRadius.circular(10)),
+          child: Row(
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.only(
+                    left: AppDimens.spacing15, right: AppDimens.spacing10),
+                child: ImageWidget(
+                    asset: AppImage.home_ic_search, width: 17, height: 17),
+              ),
+              Text(
+                'search_store'.tr(),
+                style: const TextStyle(
+                    color: Color(0xff7C7C7C),
+                    fontSize: AppDimens.sizeTxt13,
+                    fontFamily: AppTextStyle.fontSemibold),
+              )
+            ],
           ),
-          Text(
-            'search_store'.tr(),
-            style: const TextStyle(
-                color: Color(0xff7C7C7C),
-                fontSize: AppDimens.sizeTxt13,
-                fontFamily: AppTextStyle.fontSemibold),
-          )
-        ],
-      ),
-    );
+        ),
+      );
+    });
   }
 
   Widget _titleBase({required String title, required Function seeAll}) {

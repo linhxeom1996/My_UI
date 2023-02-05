@@ -5,6 +5,7 @@ import 'package:code_base/theme/dimens.dart';
 import 'package:code_base/theme/icons.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../theme/style.dart';
 
@@ -74,10 +75,7 @@ class CheckOutPage extends StatelessWidget {
             padding: const EdgeInsets.only(top: AppDimens.spacing20),
             child: termOfService(),
           ),
-          Padding(
-            padding: const EdgeInsets.all(AppDimens.horizontalCommon),
-            child: ButtonCommon(onPressed: () {}, text: "place_order".tr()),
-          )
+          _buttonOrder(context),
         ],
       ),
     );
@@ -159,6 +157,18 @@ class CheckOutPage extends StatelessWidget {
                   fontFamily: AppTextStyle.fontSemibold))
         ]),
       ),
+    );
+  }
+
+  Widget _buttonOrder(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(AppDimens.horizontalCommon),
+      child: ButtonCommon(
+          onPressed: () {
+            // Lottie.asset(AppImage.img_success);
+            Navigator.of(context).pop();
+          },
+          text: "place_order".tr()),
     );
   }
 }

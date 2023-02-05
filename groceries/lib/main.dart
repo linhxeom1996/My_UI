@@ -1,3 +1,5 @@
+import 'package:code_base/screens/bottom_bar/bottom_bar_bloc.dart';
+import 'package:code_base/screens/page_cart/cart_bloc.dart';
 import 'package:code_base/screens/page_home/home_bloc.dart';
 import 'package:code_base/screens/routers/router.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -29,6 +31,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
         providers: [
           BlocProvider(create: (context) => HomeBloc()),
+          BlocProvider(create: (context) => CartBloc()),
+          BlocProvider(create: (context) => BottomBarBloc()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

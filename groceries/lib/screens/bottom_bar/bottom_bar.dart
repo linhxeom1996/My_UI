@@ -1,3 +1,6 @@
+import 'package:code_base/screens/bottom_bar/bottom_bar_bloc.dart';
+import 'package:code_base/screens/bottom_bar/bottom_bar_event.dart';
+import 'package:code_base/screens/bottom_bar/bottom_bar_state.dart';
 import 'package:code_base/screens/page_account/account_page.dart';
 import 'package:code_base/screens/page_cart/cart_page.dart';
 import 'package:code_base/screens/page_favorite/favorite_page.dart';
@@ -8,6 +11,7 @@ import 'package:code_base/screens/widgets/behavior.dart';
 import 'package:code_base/theme/colors.dart';
 import 'package:code_base/theme/icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -34,19 +38,36 @@ class _BottomBarState extends State<BottomBar> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () {
-        return AppWillPopScope().willPopScope();
-      },
-      child: Scaffold(
+    return WillPopScope(onWillPop: () {
+      return AppWillPopScope().willPopScope();
+    }, child:
+        BlocBuilder<BottomBarBloc, BottomBarState>(builder: (context, state) {
+      switch (state.indexPage) {
+        case 1:
+          _currentPage = 1;
+          break;
+        case 2:
+          _currentPage = 2;
+          break;
+        case 3:
+          _currentPage = 3;
+          break;
+        case 4:
+          _currentPage = 4;
+          break;
+        default:
+          _currentPage = 0;
+          break;
+      }
+      return Scaffold(
         bottomNavigationBar: _bottomNavigatorBar(),
         body: AnimatedContainer(
           duration: const Duration(seconds: 2),
           curve: Curves.easeInCubic,
           child: _listPage[_currentPage],
         ),
-      ),
-    );
+      );
+    }));
   }
 
   Widget _bottomNavigatorBar() {
@@ -89,9 +110,10 @@ class _BottomBarState extends State<BottomBar> {
       items: listBottomBar,
       selectedItemColor: AppColor.mainColor,
       onTap: (index) {
-        setState(() {
-          _currentPage = index;
-        });
+        // setState(() {
+        //   _currentPage = index;
+        // });
+        context.read<BottomBarBloc>().add(BottomBarEvent(indexPage: index));
       },
     );
   }

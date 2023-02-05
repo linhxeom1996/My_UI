@@ -2,6 +2,7 @@
 
 class AppImage {
   static const path = 'assets/images/';
+  static const pathJson = 'assets/jsons';
 
   //splash
   static const splash_bg = "${path}splash_bg.png";
@@ -43,6 +44,7 @@ class AppImage {
 
   //other
   static const img_bell = "${path}img_bell.png";
+  static const img_success = "${pathJson}img_success.json";
 
   //format: static const namePage_typeImage_nameImage = "${path}namePage_typeImage_nameImage";
 }
