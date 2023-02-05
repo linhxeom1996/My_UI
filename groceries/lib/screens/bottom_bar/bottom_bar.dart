@@ -110,9 +110,6 @@ class _BottomBarState extends State<BottomBar> {
       items: listBottomBar,
       selectedItemColor: AppColor.mainColor,
       onTap: (index) {
-        // setState(() {
-        //   _currentPage = index;
-        // });
         context.read<BottomBarBloc>().add(BottomBarEvent(indexPage: index));
       },
     );

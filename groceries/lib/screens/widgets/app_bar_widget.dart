@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 
 class AppBarCommon extends StatelessWidget {
   final String title;
-  const AppBarCommon({super.key, required this.title});
+  final bool? divider;
+  const AppBarCommon({super.key, required this.title, this.divider = true});
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +25,12 @@ class AppBarCommon extends StatelessWidget {
                 fontFamily: AppTextStyle.fontSemibold),
           ),
         ),
-        Divider(
-          color: Colors.grey.withOpacity(0.5),
-          height: 0,
-        )
+        divider != true
+            ? Container()
+            : Divider(
+                color: Colors.grey.withOpacity(0.5),
+                height: 0,
+              )
       ],
     );
   }

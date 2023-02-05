@@ -1,3 +1,4 @@
+import 'package:code_base/screens/widgets/image_widget.dart';
 import 'package:code_base/theme/colors.dart';
 import 'package:code_base/theme/dimens.dart';
 import 'package:code_base/theme/style.dart';
@@ -30,7 +31,7 @@ class ProductWidget extends StatelessWidget {
           SizedBox(
               width: 80,
               height: 50,
-              child: Image.asset(image, fit: BoxFit.contain)),
+              child: ImageWidget(asset: image, fit: BoxFit.contain)),
           Container(
             height: 35,
             alignment: Alignment.centerLeft,

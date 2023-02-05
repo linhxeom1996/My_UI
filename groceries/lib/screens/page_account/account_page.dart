@@ -1,5 +1,6 @@
 import 'package:code_base/models/setting_model.dart';
 import 'package:code_base/screens/widgets/behavior.dart';
+import 'package:code_base/screens/widgets/image_widget.dart';
 import 'package:code_base/theme/icons.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -75,8 +76,11 @@ class AccountPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Image.asset(AppImage.account_ic_logout,
-                            width: 20, height: 20, color: AppColor.mainColor),
+                        const ImageWidget(
+                            asset: AppImage.account_ic_logout,
+                            width: 20,
+                            height: 20,
+                            color: AppColor.mainColor),
                         Text(
                           'logout'.tr(),
                           style: const TextStyle(
@@ -109,7 +113,7 @@ class AccountPage extends StatelessWidget {
             width: double.infinity,
             child: Row(
               children: <Widget>[
-                Image.asset(icon, width: 20, height: 20),
+                ImageWidget(asset: icon, width: 20, height: 20),
                 const SizedBox(width: AppDimens.spacing15),
                 Text(
                   title,
@@ -152,8 +156,8 @@ class InfoUser extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Row(
-                children: [
-                  const Text(
+                children: const [
+                  Text(
                     "Afsar Hossen",
                     style: TextStyle(
                         fontSize: AppDimens.sizeTxt17,
@@ -161,11 +165,11 @@ class InfoUser extends StatelessWidget {
                         fontWeight: FontWeight.w800,
                         fontFamily: AppTextStyle.fontSemibold),
                   ),
-                  const SizedBox(width: AppDimens.spacing8),
+                  SizedBox(width: AppDimens.spacing8),
                   SizedBox(
                       width: 15,
                       height: 15,
-                      child: Image.asset(AppImage.account_ic_edit))
+                      child: ImageWidget(asset: AppImage.account_ic_edit))
                 ],
               ),
               const Padding(

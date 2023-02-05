@@ -1,6 +1,7 @@
 import 'package:code_base/base/button_base.dart';
 import 'package:code_base/screens/widgets/behavior.dart';
 import 'package:code_base/screens/widgets/button_widget.dart';
+import 'package:code_base/screens/widgets/image_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -65,7 +66,8 @@ class FavoritePage extends StatelessWidget {
                 width: 50,
                 height: 50,
                 padding: const EdgeInsets.all(AppDimens.spacing10),
-                child: Image.asset(AppImage.img_bell, fit: BoxFit.cover),
+                child: const ImageWidget(
+                    asset: AppImage.img_bell, fit: BoxFit.cover),
               ),
               const SizedBox(width: AppDimens.spacing15),
               Column(

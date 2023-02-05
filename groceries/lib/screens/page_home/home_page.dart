@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:code_base/screens/bottom_bar/bottom_bar_bloc.dart';
 import 'package:code_base/screens/bottom_bar/bottom_bar_event.dart';
@@ -60,7 +61,7 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(
                   top: AppDimens.spacing20, bottom: AppDimens.spacing15),
-              child: searchButton(),
+              child: searchButton(context),
             ),
             const SalesOff(),
             Expanded(
@@ -85,39 +86,37 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget searchButton() {
-    return BlocBuilder<BottomBarBloc, BottomBarState>(
-        builder: (context, state) {
-      return GestureDetector(
-        onTap: () {
-          context.read<BottomBarBloc>().add(BottomBarEvent(indexPage: 1));
-        },
-        child: Container(
-          width: double.infinity,
-          height: 50,
-          decoration: BoxDecoration(
-              color: const Color(0xffF2F3F2),
-              borderRadius: BorderRadius.circular(10)),
-          child: Row(
-            children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.only(
-                    left: AppDimens.spacing15, right: AppDimens.spacing10),
-                child: ImageWidget(
-                    asset: AppImage.home_ic_search, width: 17, height: 17),
-              ),
-              Text(
-                'search_store'.tr(),
-                style: const TextStyle(
-                    color: Color(0xff7C7C7C),
-                    fontSize: AppDimens.sizeTxt13,
-                    fontFamily: AppTextStyle.fontSemibold),
-              )
-            ],
-          ),
+  Widget searchButton(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        BlocProvider.of<BottomBarBloc>(context)
+            .add(BottomBarEvent(indexPage: 1));
+      },
+      child: Container(
+        width: double.infinity,
+        height: 50,
+        decoration: BoxDecoration(
+            color: const Color(0xffF2F3F2),
+            borderRadius: BorderRadius.circular(10)),
+        child: Row(
+          children: <Widget>[
+            const Padding(
+              padding: EdgeInsets.only(
+                  left: AppDimens.spacing15, right: AppDimens.spacing10),
+              child: ImageWidget(
+                  asset: AppImage.home_ic_search, width: 17, height: 17),
+            ),
+            Text(
+              'search_store'.tr(),
+              style: const TextStyle(
+                  color: Color(0xff7C7C7C),
+                  fontSize: AppDimens.sizeTxt13,
+                  fontFamily: AppTextStyle.fontSemibold),
+            )
+          ],
         ),
-      );
-    });
+      ),
+    );
   }
 
   Widget _titleBase({required String title, required Function seeAll}) {

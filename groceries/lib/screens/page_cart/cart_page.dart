@@ -1,5 +1,6 @@
 import 'package:code_base/screens/check_out/check_out_page.dart';
 import 'package:code_base/screens/widgets/behavior.dart';
+import 'package:code_base/screens/widgets/image_widget.dart';
 import 'package:code_base/theme/colors.dart';
 import 'package:code_base/theme/dimens.dart';
 import 'package:code_base/theme/icons.dart';
@@ -80,8 +81,8 @@ class CartPage extends StatelessWidget {
                 width: 90,
                 height: 90,
                 padding: const EdgeInsets.all(AppDimens.spacing20),
-                child: Image.asset(
-                  AppImage.img_bell,
+                child: const ImageWidget(
+                  asset: AppImage.img_bell,
                   fit: BoxFit.cover,
                 ),
               ),

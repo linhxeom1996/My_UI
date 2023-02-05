@@ -1,5 +1,6 @@
 import 'package:code_base/models/checkout_model.dart';
 import 'package:code_base/screens/widgets/button_widget.dart';
+import 'package:code_base/screens/widgets/image_widget.dart';
 import 'package:code_base/theme/colors.dart';
 import 'package:code_base/theme/dimens.dart';
 import 'package:code_base/theme/icons.dart';
@@ -28,8 +29,8 @@ class CheckOutPage extends StatelessWidget {
           )),
       CheckOutModel(
           title: 'payment'.tr(),
-          widget:
-              Image.asset(AppImage.check_out_ic_card, width: 20, height: 15)),
+          widget: const ImageWidget(
+              asset: AppImage.check_out_ic_card, width: 20, height: 15)),
       CheckOutModel(
           title: "promo_code".tr(),
           widget: Text(
