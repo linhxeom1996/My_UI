@@ -42,6 +42,14 @@ class AppImage {
   //check out
   static const check_out_ic_card = "${path}check_out_ic_card.png";
 
+  //search
+  static const search_img_vegetable = "${path}search_img_vegetable.png";
+  static const search_img_bakery = "${path}search_img_bakery.png";
+  static const search_img_beverages = "${path}search_img_beverages.png";
+  static const search_img_cookingoil = "${path}search_img_cookingoil.png";
+  static const search_img_egg = "${path}search_img_egg.png";
+  static const search_img_meat = "${path}search_img_meat.png";
+
   //other
   static const img_bell = "${path}img_bell.png";
   static const img_success = "${pathJson}img_success.json";
